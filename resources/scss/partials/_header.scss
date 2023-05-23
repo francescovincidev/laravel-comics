@@ -1,0 +1,47 @@
+// HEADER
+.header-menu {
+    @include flex(row, space-between, center);
+    @include container;
+    text-transform: uppercase;
+    height: 100px;
+    font-weight: bold;
+    font-size: .7rem;
+    color: $primary-grey;
+
+    img {
+        max-height: 80%
+    }
+
+    ul {
+        @include flex(row, space-between, center);
+        gap: 30px;
+
+        li {
+            @include flex(row, space-between, center);
+            position: relative;
+            height: 100px;
+            width: 100%;
+
+            .blue-orizontal {
+                height: 3px;
+                width: 100%;
+                background-color: $primary-blue;
+                margin: 0 auto;
+                position: absolute;
+                bottom: 0;
+                display: none;
+            }
+        }
+
+        li:hover {
+            color: $primary-blue;
+            cursor: pointer;
+
+            & .blue-orizontal {
+                display: block;
+            }
+        }
+    }
+}
+
+// JUMBOTRON
