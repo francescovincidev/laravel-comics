@@ -14,5 +14,7 @@
                 </div>
             @endforeach
         </div>
+        <div class="load-more">Load more</div>
+        <div class="current-series">current series</div>
     </div>
 @endsection

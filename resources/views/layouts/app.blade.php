@@ -22,9 +22,9 @@
     <main class="bg-light">
         @yield('content')
     </main>
-
-
-    @dd($comics);
+    @include('partials.blue-content')
+    @include('partials.footer-main')
+    @include('partials.footer-contacts')
 
 </body>
 

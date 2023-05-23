@@ -2,7 +2,20 @@
 @use './partials/variables' as *;
 @import '~bootstrap/scss/bootstrap';
 
+//GENREAL
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
+li {
+    list-style-type: none;
+
+}
+
+
+//HEADER
 .header-menu {
     @include flex(row, space-between, center);
     @include container;
@@ -19,6 +32,8 @@
     ul {
         @include flex(row, space-between, center);
         gap: 30px;
+        margin: auto;
+        padding-right: 0;
 
         li {
             @include flex(row, space-between, center);
@@ -66,15 +81,11 @@
     position: relative;
     color: white;
 
-
-
     .cards {
         @include container;
         @include flex(row, space-around, stretch);
         flex-wrap: wrap;
         gap: 20px;
-
-
     }
 
     .load-more {
@@ -82,8 +93,6 @@
         background-color: $primary-blue;
         margin-top: 40px;
         cursor: pointer;
-
-
     }
 
     .current-series {
@@ -129,4 +138,129 @@
         }
     }
 
+}
+
+// BLUE CONTENT
+.blue-content {
+    padding: 35px 0;
+    background-color: $primary-blue;
+    color: white;
+    @include flex(row, center, center);
+
+    .content {
+        @include container;
+        @include flex(row, space-around, center);
+        font-size: .7rem;
+        text-transform: uppercase;
+
+        @media screen and (max-width:600px) {
+            @include flex(column, stretch, stretch);
+            gap: 20px;
+        }
+
+        div {
+            @include flex(row, flex-start, center);
+            gap: 10px;
+            height: 100%;
+            flex-shrink: 0;
+            cursor: pointer;
+
+            img {
+                max-width: 50px;
+                max-height: 50px;
+            }
+        }
+    }
+
+}
+
+//FOOTER MAIN
+.footer-main-content {
+    background-image: url("../img/footer-bg.jpg");
+    height: 100%;
+    color: white;
+    font-size: .65rem;
+
+
+    .content {
+        @include container;
+        @include flex(row, flex-start, flex-start);
+        height: 100%;
+        background-image: url("../img/dc-logo-bg.png");
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: right;
+
+
+        .lists {
+            @include flex(column, flex-start, flex-start);
+            flex-wrap: wrap;
+            width: 50%;
+            gap: 20px;
+            height: 400px;
+            padding: 30px 0 50px;
+
+            ul {
+                li {
+                    padding: 5px 0;
+                    cursor: pointer;
+                }
+
+                li:first-child {
+                    font-size: 1rem;
+                    font-weight: bolder;
+                    padding: 5px 0;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+}
+
+
+//FOOTER CONTACTS
+.footer-contacts {
+    height: 80px;
+    background-color: $primary-grey;
+    text-transform: uppercase;
+
+    .content {
+        height: 100%;
+        @include container;
+        @include flex(row, space-between, center);
+
+        .singup {
+            color: white;
+            padding: 5px 10px;
+            border: 1px solid $primary-blue;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        .socials {
+            ul {
+                @include flex(row, flex-start, center);
+                gap: 10px;
+
+                li:first-child {
+                    font-size: 1rem;
+                    font-weight: bolder;
+                    color: $primary-blue;
+                    padding-right: 10px;
+                }
+
+                li {
+                    cursor: pointer;
+
+                    img {
+                        width: 25px;
+                    }
+                }
+
+            }
+
+        }
+
+    }
 }
